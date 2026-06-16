@@ -239,37 +239,13 @@ function setupDropdown(id){
 
     });
 
-    if(window.innerWidth<=768){
+    button.onclick = (e) => {
 
-        button.onclick = (e) => {
-            
-            e.stopPropagation();
+        e.stopPropagation();
 
-            dropdown.classList.toggle("active");
+        dropdown.classList.toggle("active");
 
-        };
-
-    } else {
-
-        dropdown.onmouseenter = () => {
-
-            dropdown.classList.add("active");
-
-        };
-
-        dropdown.addEventListener("mouseleave", () => {
-
-            setTimeout(()=>{
-
-                if(!dropdown.matches(":hover")){
-                    dropdown.classList.remove("active");
-                }
-
-            },200);
-
-        });
-
-    }
+    };
 }
 
 setupDropdown("sort-dropdown");
