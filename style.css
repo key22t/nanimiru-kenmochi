@@ -13,6 +13,7 @@ body {
 
 .page-title{
     width: 100%;
+    box-sizing:border-box;
     background: #222;
     padding:1px 12px;
     font-size: 12px;
@@ -39,6 +40,7 @@ body {
     align-items:center;
     gap:10px;
     cursor: pointer;
+    flex-shrink:0;
 }
 
 .social-icon{
@@ -49,7 +51,7 @@ body {
 
 .app{
     font-family: Arial, sans-serif;
-    padding:20px;
+    margin:20px;
 }
 
 .top-ui{
@@ -314,14 +316,14 @@ select{
 }
 
 @media (max-width: 768px){
+    .app{
+        margin:0;
+        padding:10px;
+    }
     .search-bar{
         width: 100%;
     }
     .filter-row{
         flex-direction: column;
-    }
-    .app{
-        margin:0;
-        padding:10px;
     }
 }
