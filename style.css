@@ -329,3 +329,7 @@ select{
         flex-direction: column;
     }
 }
+
+*{
+    outline:1px solid red;
+}
