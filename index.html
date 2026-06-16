@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <title>なにみるけんもち</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    <div class="page-title">
+        <h1 class="title">なにみるけんもち</h1>
+
+        <div class="title-links">
+        
+            <a href="https://x.com/rei_toya_rei" target="_blank">
+                <img src="logo-black.png" class="social-icon">
+            </a>
+
+            <a href="https://www.youtube.com/@KenmochiToya" target="_blank">
+                <img src="yt_icon_red_digital.png" class="social-icon">
+            </a>
+
+        </div>
+    </div>
+    <div class="app">
+        <div class="top-ui">
+
+            <div class="search-bar">
+                <input
+                    type="text"
+                    id="search-input"
+                    autocomplete="off"
+                    placeholder="動画タイトルで検索..."
+                >
+
+                <button id="search-button">検索</button>
+
+            </div>
+
+            <div class="filter-row">
+                <div class="dropdown" id="sort-dropdown">
+                    <button class="filter-button">
+                        並び順
+                        <span>▼</span>
+                    </button>                
+                    <div class="dropdown-menu">
+                        <div class="dropdown-item" data-value="random">
+                            おすすめ(ランダム表示)
+                        </div>
+                        <div class="dropdown-item" data-value="new">
+                            新しい順
+                        </div>  
+                        <div class="dropdown-item" data-value="old">
+                            古い順
+                        </div>  
+                        <div class="dropdown-item" data-value="long">
+                            長い順
+                        </div>
+                        <div class="dropdown-item" data-value="short">
+                            短い順
+                        </div>                                        
+                    </div>
+                </div>
+                <div class="dropdown" id="genre-dropdown">
+
+                    <button class="filter-button">
+                        ジャンル
+                        <span>▼</span>
+                    </button>
+
+
+                    <div class="dropdown-menu">
+
+                        <label class="dropdown-item">
+
+                            <input 
+                            type="checkbox"
+                            value="ショート">
+
+                            ショート
+
+                        </label>                        
+
+
+                        <label class="dropdown-item">
+
+                            <input 
+                            type="checkbox"
+                            value="歌枠等">
+
+                            歌枠等
+
+                        </label>                        
+
+                        <label class="dropdown-item">
+
+                            <input 
+                            type="checkbox"
+                            value="ゲーム">
+
+                            ゲーム
+
+                        </label>
+
+
+                        <label class="dropdown-item">
+
+                            <input 
+                            type="checkbox"
+                            value="雑談">
+
+                            雑談
+
+                        </label>
+
+
+                    </div>
+
+                </div>
+
+                <div class="dropdown" id="duration-dropdown">
+
+
+                <button class="filter-button">
+
+                動画時間
+
+                <span>▼</span>
+
+                </button>
+
+
+                <div class="dropdown-menu">
+
+
+                <label class="dropdown-item">
+
+                <input type="checkbox" value="under30">
+
+                30分未満
+
+                </label>
+
+
+                <label class="dropdown-item">
+
+                <input type="checkbox" value="around1">
+
+                1時間程度
+
+                </label>
+
+
+                <label class="dropdown-item">
+
+                <input type="checkbox" value="around2">
+
+                2時間程度
+
+                </label>
+
+
+                <label class="dropdown-item">
+
+                <input type="checkbox" value="around3">
+
+                3時間程度
+
+                </label>
+
+
+                <label class="dropdown-item">
+
+                <input type="checkbox" value="long">
+
+                3時間以上(長時間)
+
+                </label>
+
+
+                </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="introduce">
+            <p>
+                このサイトは剣持刀也さんの配信・動画を検索するための非公式ファンサイトです。
+            </p>
+            <p>
+                「どのアーカイブを見るか悩む...」「1時間ぐらいでサクッと観られるのないかな？」という時に、観たい配信を探してみてください。
+            </p>
+        </div>
+
+        <div id="video-list"></div>
+
+        <script src="script.js"></script>
+    </div>
+</body>
+
+</html>
