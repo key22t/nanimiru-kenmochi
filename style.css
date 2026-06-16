@@ -2,12 +2,14 @@
     box-sizing: border-box;
 }
 
-html,body{
+html{
     width:100%;
+    max-width:100%;
     overflow-x:hidden;
 }
 
 body {
+    width:100%;
     font-family: Arial, sans-serif;
     margin: 0;
     background: #A590AF;
@@ -111,10 +113,9 @@ body {
 }
 
 .dropdown {
-
-    width:100%;
-    min-width:0;
-
+    position: relative;
+    flex: 1;
+    min-width: 0;
 }
 
 
