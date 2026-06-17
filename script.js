@@ -95,6 +95,19 @@ function displayVideos(videoData) {
     }
 }
 
+function hideIntroduce(){
+
+    const introduce =
+        document.getElementById("introduce");
+
+    if(introduce){
+
+        introduce.style.display = "none";
+
+    }
+
+}
+
 function updateDisplay() {
 
     console.log(currentSort);
@@ -243,6 +256,20 @@ function setupDropdown(id){
 
         e.stopPropagation();
 
+
+        document
+        .querySelectorAll(".dropdown")
+        .forEach(other => {
+
+            if(other !== dropdown){
+
+                other.classList.remove("active");
+
+            }
+
+        });
+
+
         dropdown.classList.toggle("active");
 
     };
@@ -260,7 +287,7 @@ sortDropdown
 
     item.onclick = () => {
 
-        console.log(item.dataset);
+        hideIntroduce();
 
         currentSort =
         item.dataset.value;
@@ -341,6 +368,8 @@ document
 
 box.onchange = ()=>{
 
+    hideIntroduce();
+
     currentGenres =
     Array.from(
         document.querySelectorAll(
@@ -364,6 +393,8 @@ document
 
 box.onchange = ()=>{
 
+    hideIntroduce();
+
     currentDurations =
     Array.from(
         document.querySelectorAll(
@@ -383,22 +414,27 @@ loadVideos();
 
 });
 document
-    .getElementById("search-button")
-    .addEventListener("click", function () {
+.getElementById("search-button")
+.addEventListener("click", function () {
 
-        currentSearch =
-            document.getElementById("search-input").value;
+    hideIntroduce();
 
-        updateDisplay();
-    });
+    currentSearch =
+        document.getElementById("search-input").value;
+
+    updateDisplay();
+});
 document
     .getElementById("search-input")
     .addEventListener("keydown", function (e) {
 
         if (e.key === "Enter") {
 
+            hideIntroduce();
+
             currentSearch = this.value;
             updateDisplay();
+
         }
     });
 document.addEventListener("click", () => {
