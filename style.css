@@ -281,6 +281,26 @@ select{
     text-align: center;
 }
 
+.name{
+    font-size:22px;
+    font-weight:bold;
+    color: #674D9E;
+}
+
+.highlight{
+    font-size:18px;
+    color: #6a5871;
+}
+
+
+.notice{
+    font-size: 11px;
+    color: #444;
+    margin-top: 15px;
+    /* text-align: left; */
+    font-weight: normal;
+}
+
 .thumbnail {
     width: 168px;
     height: 94px;
