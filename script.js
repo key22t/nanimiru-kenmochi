@@ -239,6 +239,16 @@ async function loadVideos() {
     videos =
         await response.json();
 
+    currentYears =
+    Array.from(
+        document.querySelectorAll(
+            "#year-dropdown input:checked"
+        )
+    )
+    .map(x => x.value);
+
+    updateYearButton();
+
     updateDisplay();
 }
 
@@ -383,7 +393,13 @@ function updateYearButton() {
             "#year-dropdown .filter-button"
         );
 
-    if (currentYears.length === 0) {
+    if(currentYears.length === 9){
+
+        button.innerHTML =
+        "投稿年（全期間） <span>▼</span>";
+
+    }
+    else if (currentYears.length === 0) {
 
         button.innerHTML =
             "投稿年 <span>▼</span>";
@@ -482,7 +498,7 @@ window.addEventListener("load", () => {
 
     document
     .querySelectorAll(
-        "#genre-dropdown input, #duration-dropdown input, #year-dropdown input"
+        "#genre-dropdown input, #duration-dropdown input"
     )
     .forEach(box => {
 
