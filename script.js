@@ -478,6 +478,20 @@ document
 
 });
 
+window.addEventListener("load", () => {
+
+    document
+    .querySelectorAll(
+        "#genre-dropdown input, #duration-dropdown input, #year-dropdown input"
+    )
+    .forEach(box => {
+
+        box.checked = false;
+
+    });
+
+});
+
 loadVideos();
 
 document
