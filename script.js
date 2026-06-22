@@ -4,6 +4,7 @@ let currentSearch = "";
 let currentSort = "random";
 let currentGenres = [];
 let currentDurations = [];
+let currentYears = [];
 
 const durationLabels = {
 
@@ -214,6 +215,19 @@ function updateDisplay() {
         );
     }
 
+    if(currentYears.length > 0){
+
+        result = result.filter(video => {
+
+            const year =
+            video.publishedAt.slice(0,4);
+
+            return currentYears.includes(year);
+
+        });
+
+    }
+
     displayVideos(result);
 }
 
@@ -278,6 +292,7 @@ function setupDropdown(id){
 setupDropdown("sort-dropdown");
 setupDropdown("genre-dropdown");
 setupDropdown("duration-dropdown");
+setupDropdown("year-dropdown");
 
 
 sortDropdown
@@ -361,6 +376,33 @@ function updateDurationButton() {
     }
 }
 
+function updateYearButton() {
+
+    const button =
+        document.querySelector(
+            "#year-dropdown .filter-button"
+        );
+
+    if (currentYears.length === 0) {
+
+        button.innerHTML =
+            "投稿年 <span>▼</span>";
+
+    } else if (currentYears.length <= 2) {
+
+        button.innerHTML =
+            [...currentYears]
+            .sort((a,b)=>Number(a)-Number(b))
+            .join(" / ")
+            + " <span>▼</span>";
+
+    } else {
+
+        button.innerHTML =
+            `${currentYears.length}件選択 <span>▼</span>`;
+    }
+}
+
 document
 .querySelectorAll("#genre-dropdown input")
 .forEach(box=>{
@@ -409,10 +451,32 @@ box.onchange = ()=>{
 
 };
 
-loadVideos();
+document
+.querySelectorAll("#year-dropdown input")
+.forEach(box=>{
 
+    box.onchange = ()=>{
+
+        currentYears =
+        Array.from(
+            document.querySelectorAll(
+                "#year-dropdown input:checked"
+            )
+        )
+        .map(x=>x.value);
+
+        updateYearButton();
+
+        updateDisplay();
+
+    };
 
 });
+
+});
+
+loadVideos();
+
 document
 .getElementById("search-button")
 .addEventListener("click", function () {
