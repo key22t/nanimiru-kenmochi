@@ -451,11 +451,14 @@ box.onchange = ()=>{
 
 };
 
+
 document
 .querySelectorAll("#year-dropdown input")
 .forEach(box=>{
 
     box.onchange = ()=>{
+
+        hideIntroduce();
 
         currentYears =
         Array.from(
