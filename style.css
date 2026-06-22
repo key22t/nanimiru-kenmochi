@@ -163,10 +163,6 @@ body {
 
     width: 100%;
 
-    max-height: 250px;
-
-    overflow-y: auto;
-
     background: white;
 
     border-radius: 15px;
@@ -178,6 +174,20 @@ body {
 
     z-index: 10;
 
+}
+
+#year-dropdown .dropdown-menu{
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+#year-dropdown .dropdown-menu::-webkit-scrollbar{
+    width: 6px;
+}
+
+#year-dropdown .dropdown-menu::-webkit-scrollbar-thumb{
+    background: #999;
+    border-radius: 10px;
 }
 
 
